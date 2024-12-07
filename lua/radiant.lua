@@ -14,8 +14,7 @@ local function register_lsp()
     callback = function(_args)
       vim.lsp.start({
         name = 'radiant-lsp',
-        -- run npm link to install
-        cmd = { 'radiant-ls', '--stdio' }
+        cmd = { 'radls', '--stdio' }
       })
     end,
   })
@@ -24,19 +23,19 @@ end
 local function register_user_commands()
   vim.api.nvim_create_user_command(
     'RadiantGenerate',
-    ':!radiant-cli generate %',
+    ':!rad generate %',
     {}
   )
 
   vim.api.nvim_create_user_command(
     'RadiantDeploy',
-    ':!radiant-cli deploy %',
+    ':!rad deploy %',
     {}
   )
 
   vim.api.nvim_create_user_command(
     'RadiantDeployDry',
-    ':!radiant-cli deploy % --dry-run',
+    ':!rad deploy % --dry-run',
     {}
   )
 end
