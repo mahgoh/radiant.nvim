@@ -15,6 +15,7 @@
 [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
 {
-  "mahgoh/radiant.nvim",
+    "mahgoh/radiant.nvim",
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
 }
 ```
